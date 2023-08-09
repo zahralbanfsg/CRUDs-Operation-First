@@ -1,0 +1,10 @@
+textarea {
+  resize: none;
+}
+.form-control:focus {
+  border-color: rgb(35, 7, 160);
+  /* box-shadow: 0 0 0 0.25rem rgb(35, 7, 160); */
+}
+table{
+  font-size: 1rem;
+}

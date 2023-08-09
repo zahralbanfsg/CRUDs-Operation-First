@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDs Operations</title>
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/media.css">
+</head>
+
+<body class="text-black">
+    <Section class="container">
+        <div class="text-center bg-black mainImg">
+            <img src="./images/a3exuz06e9h212pandfr.webp" class="w-100" alt="">
+        </div>
+        <div class="inputs">
+            <div class=" mb-3">
+                <label for="productName" class="mb-2 fw-bold">Product Name : </label>
+                <input type="text" class="form-control" name="productName" id="productName"
+                    placeholder="Enter Product Name">
+                <p class="text-danger p-2 d-none" id="productNameInvalid">* Invalid Input * Please, the product name of
+                    <br> first character is capital and from 3
+                    to 8 characters
+                </p>
+            </div>
+            <div class=" mb-3">
+                <label for="productPrice" class="mb-2 fw-bold">Product Price : </label>
+                <input type="text" class="form-control" name="productPrice" id="productPrice"
+                    placeholder="Enter Product Price">
+                <p class="text-danger p-2 d-none" id="productPriceInvalid">* Invalid Input * Please, the currency of
+                    product is $ <br> and Min price is 1000$ and Max price is 10000$</p>
+            </div>
+            <div class=" mb-3">
+                <label for="productModel" class="mb-2 fw-bold">Product Model : </label>
+                <input type="text" class="form-control" name="productModel" id="productModel"
+                    placeholder="Enter Product Model">
+                <p class="text-danger d-none" id="productModelInvalid">* Invalid Input * Please, the product model is
+                    Television or Mobile or Laptop <br> the frist character is Capital or Small</p>
+            </div>
+            <div class="mb-3">
+                <label for="productDesc" class="mb-2 fw-bold">Product Description : </label>
+                <textarea name="productDesc" id="productDesc" class="form-control"></textarea>
+                <p class="text-danger p-2 d-none" id="productDescInvalid">* Invalid Input * Please, the description
+                    contains max. 20 word</p>
+            </div>
+            <div class="mb-3">
+                <button onclick="addProduct()" class="btn btn-primary fw-bold" id="addProductBtn">Add Product</button>
+                <button onclick="updateProduct()" class="btn btn-warning fw-bold text-white d-none"
+                    id="updateProductBtn">Update Product</button>
+            </div>
+        </div>
+
+        <div class="mb-5 searchInput">
+            <label for="search" class="mb-2 fw-bold">Search :</label>
+            <input type="text" oninput="searchByName(this.value)" class="form-control" id="search">
+        </div>
+        <table class="table table-hover table-bordered table-responsive-sm text-center mb-5">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Model</th>
+                    <th>Product Description</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+            </tbody>
+        </table>
+    </Section>
+    <script src="./JS/main.js"></script>
+</body>
+
+</html>
